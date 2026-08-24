@@ -25,6 +25,14 @@ CITY_TO_IATA = {
     "dubai": "DXB",
     "دبي": "DXB",
 }
+CITY_RATINGS = {
+    "cairo": 4.3,
+    "paris": 4.7,
+    "tokyo": 4.6,
+    "bali": 4.5,
+    "rome": 4.6,
+    "dubai": 4.4,
+}
 
 def resolve_city(name: str) -> str | None:
     return CITY_TO_IATA.get(name.strip().lower())
@@ -36,3 +44,9 @@ class FlightSearchRequest(BaseModel):
     departure_date: str
     return_date: str | None = None
     passengers: int = 1
+
+
+class SuggestionRequest(BaseModel):
+    origin_city: str
+    budget: float
+    departure_date: str

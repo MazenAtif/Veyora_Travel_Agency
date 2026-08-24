@@ -16,3 +16,11 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
+## Endpoints
+
+### POST `/search-flight`
+Searches flights between two cities using Duffel API.
+
+
+### POST `/best-destination`
+Suggests the best travel destination based on weather, static ratings, flight price within budget, and AI ranking (Groq).
