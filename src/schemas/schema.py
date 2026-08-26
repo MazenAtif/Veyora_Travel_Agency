@@ -50,3 +50,15 @@ class SuggestionRequest(BaseModel):
     origin_city: str
     budget: float
     departure_date: str
+
+
+class BookingRequest(BaseModel):
+    user_name: str
+    user_email: str
+    origin_city: str
+    destination_city: str
+    departure_date: str
+    return_date: str | None = None
+    passengers: int = 1
+    hotel_name: str | None = None
+    total_price: float
